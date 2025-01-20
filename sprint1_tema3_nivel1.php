@@ -13,15 +13,15 @@ $nombres[]=4;
 
 
 foreach($nombres as $key => $value) {
-    echo "$value <br>";
+    echo "clave: $key es $value <br>";
 }
 
 echo "Exercici 2 <br>";
 
 $X = array (10, 20, 30, 40, 50,60);
 echo count($X) . "<br>";
-unset($X[3]);
-$X = array_values($X);
+unset($X[3]);               // borra el registro
+$X = array_values($X);      //reindexa: traslada los valores de un array a uno nuevo
 echo count($X)."<br>";
 
 echo "Exercici 3. True si totes les paraules contenen el caracter <br>";
@@ -31,7 +31,7 @@ $caracter = "E";
 
 echo trobaCaracter($paraules, $caracter)? "true" : "false";
 
-function trobaCaracter($paraules, $caracter) : bool{
+function trobaCaracter(array $paraules, string $caracter) : bool{
     foreach ($paraules as $paraula) {
         if (stripos($paraula, $caracter) === false) {
             echo "La paraula $paraula no conté el caracter $caracter. <br>"; 
